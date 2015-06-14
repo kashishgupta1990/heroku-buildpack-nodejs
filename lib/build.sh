@@ -187,6 +187,12 @@ function build_dependencies() {
     info "Installing node modules"
     npm install --unsafe-perm --quiet --userconfig $build_dir/.npmrc 2>&1 | indent
   fi
+
+  info "Install npm install gulp@3.9.0 -g"
+  npm install gulp@3.9.0 -g | indent
+
+  info "Building dist folder to server Angular Application"
+  gulp build | indent
 }
 
 ensure_procfile() {
