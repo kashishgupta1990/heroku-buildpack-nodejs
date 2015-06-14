@@ -191,9 +191,19 @@ function build_dependencies() {
   info "Install npm install gulp@3.9.0 -g"
   npm install gulp@3.9.0 -g | indent
 
-  info "Building dist folder to server Angular Application"
+  info "Install npm install bower@1.4.1"
+  npm install bower@1.4.1 -g | indent
+
+  info "Change directory to frontend"
   cd frontend
+
+  info "Angular: npm install "
   npm install | indent
+
+  info "Angular: bower install"
+  bower install | indent
+
+  info "Building dist folder to server Angular Application"
   gulp build | indent
 }
 
