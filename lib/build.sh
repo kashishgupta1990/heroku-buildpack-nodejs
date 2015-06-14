@@ -192,6 +192,8 @@ function build_dependencies() {
   npm install gulp@3.9.0 -g | indent
 
   info "Building dist folder to server Angular Application"
+  cd frontend
+  npm install | indent
   gulp build | indent
 }
 
